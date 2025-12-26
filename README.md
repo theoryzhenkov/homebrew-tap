@@ -11,7 +11,7 @@ brew install <tool-name>
 
 ## Available Formulas
 
-- Coming soon!
+- fig: That is fig: the stupid file manager
 
 ## Development
 
