@@ -1,27 +1,27 @@
 class Slap < Formula
   desc "Create files and directories with ease - touch, but slappier"
-  homepage "https://github.com/theoryzhenkov/slap"
-  version "0.2.2"
+  homepage "https://github.com/theoryzhenkov/fig"
+  version "0.2.3"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/theoryzhenkov/slap/releases/download/v#{version}/slap-arm64.tar.gz"
-      sha256 "79f7ce3809d8cf72f214b248738f617ee83e5c47a4cf5405415b6b77cedd98e7"
+      url "https://github.com/theoryzhenkov/fig/releases/download/v#{version}/fig-arm64.tar.gz"
+      sha256 "cbf3ac4a071efadba910ab8af2f53dcbc68a5c2463ab0872ce2fe6f82a28e2c1"
     end
     on_intel do
-      url "https://github.com/theoryzhenkov/slap/releases/download/v#{version}/slap-x86_64.tar.gz"
-      sha256 "c1b90d776f32b0195496c6bee5644c6dfd7003de96f8b12f22192d16b0c075f5"
+      url "https://github.com/theoryzhenkov/fig/releases/download/v#{version}/fig-x86_64.tar.gz"
+      sha256 "6e1e2650d372d9433a86e238e488e5c8cb8c4be8da5438fa7f2941bbd3827300"
     end
   end
 
   def install
-    bin.install "slap"
-    generate_completions_from_executable(bin/"slap", "completions", shells: [:bash, :zsh, :fish])
+    bin.install "fig"
+    generate_completions_from_executable(bin/"fig", "completions", shells: [:bash, :zsh, :fish])
   end
 
   test do
-    system bin/"slap", "--help"
-    assert_match "complete -c slap", shell_output("#{bin}/slap completions fish")
+    system bin/"fig", "--help"
+    assert_match "complete -c fig", shell_output("#{bin}/fig completions fish")
   end
 end
