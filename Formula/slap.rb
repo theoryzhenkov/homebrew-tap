@@ -1,5 +1,5 @@
-class Slap < Formula
-  desc "Create files and directories with ease - touch, but slappier"
+class Fig < Formula
+  desc "That is fig: the stupid file manager"
   homepage "https://github.com/theoryzhenkov/fig"
   version "0.2.3"
   license "MIT"
