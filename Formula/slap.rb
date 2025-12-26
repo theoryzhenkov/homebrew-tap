@@ -17,9 +17,11 @@ class Slap < Formula
 
   def install
     bin.install "slap"
+    generate_completions_from_executable(bin/"slap", "completions", shells: [:bash, :zsh, :fish])
   end
 
   test do
     system bin/"slap", "--help"
+    assert_match "complete -c slap", shell_output("#{bin}/slap completions fish")
   end
 end
